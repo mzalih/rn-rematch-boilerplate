@@ -8,13 +8,15 @@
   },
   "dependencies": {
     "@rematch/core": "^1.0.6",
+    "native-base": "^2.8.1",
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-gesture-handler": "^1.0.10",
     "react-navigation": "^3.0.2",
     "react-redux": "^5.1.1",
     "react-router-redux": "^4.0.8",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "redux-form": "^7.4.2"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
