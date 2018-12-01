@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems:'center'   ,
-    backgroundColor: "#eafcf9",
+    backgroundColor: "#BBCBDA",
     margin: 0 ,height:'100%' 
   },
   horizontal: {
@@ -32,6 +32,6 @@ export const styles = StyleSheet.create({
     width: 100,
   },
   headerStyle: {
-      backgroundColor: '#AAfcf9',
+      backgroundColor: '#7798B5',
     },
 })

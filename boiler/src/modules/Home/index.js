@@ -19,6 +19,14 @@ const mapStateToProps = ({ homeModal }) => {
 
 class Page extends React.Component {
 
+  static navigationOptions = {
+        title: "PAGE NAME",
+        headerStyle: styles.headerStyle,
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold', },
+    }
+
+
 	async componentDidMount() {
         this.props.fetchUser();
     }
@@ -31,21 +39,21 @@ class Page extends React.Component {
 
    render() {
   //console.log(this.props);
-    
+    var data = this.props.userData ? this.props.userData.results[0] : null;
     if(this.props.loading){
       return (<View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#0000ff" />
       </View>);
     }
-     if(this.props.userData){
+     if(data){
       return (<View style={[styles.container]}>
         <Image
             style={[styles.circle100]}
-            source={{uri: this.props.userData.results[0].picture.thumbnail}}
+            source={{uri: data.picture.medium}}
           />
               <Text style={[styles.headline]}>WELCOME</Text>
-       <Text style={[styles.title]} >{ (this.props.userData.results[0].name.first + " " + this.props.userData.results[0].name.last).toUpperCase()}</Text>
-      <Button style= {{ margin: 10 }} block primary onPress= { ()=> { this.props.logout() } }>
+       <Text style={[styles.title]} >{ (data.name.title + " " + data.name.first + " " + data.name.last).toUpperCase()}</Text>
+      <Button style= {{ margin: 10 ,backgroundColor:"#0000000" }} block primary onPress= { ()=> { this.props.logout() } }>
             <Text>Logout</Text>
       </Button>
           
