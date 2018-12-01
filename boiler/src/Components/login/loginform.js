@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import { View } from 'react-native';
-import { Validate,TextField } from "../form"
-import { Container, Item, Content, Button, Text  } from 'native-base';
+import { validate ,TextField } from "../form"
+import { Container, Item, Content, Button, Text,Form  } from 'native-base';
 import { Field,reduxForm } from 'redux-form';
 
 class LoginForm extends Component {
@@ -25,10 +25,10 @@ class LoginForm extends Component {
           <Text>Login</Text>
         </Button>
       </Content>
-    </Container>    )
+    </Container> )
   }
 }
 export default reduxForm({
   form: 'login', 
-  Validate
+  validate
 })(LoginForm)

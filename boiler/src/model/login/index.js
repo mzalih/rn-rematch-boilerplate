@@ -35,8 +35,8 @@ export default {
   effects: {
     async login(payload, rootState) {
       try {
+        console.log("ON MODAL",payload);
         this.onRequest();
-
         console.log(this);
         let res = await service.login(payload);
         this.onLogin(res);

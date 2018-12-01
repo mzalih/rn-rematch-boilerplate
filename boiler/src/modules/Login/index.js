@@ -15,11 +15,18 @@ const mapStateToProps = ({ loginModal }) => {
     ...loginModal
   };
 };
+
 class Page extends React.Component {
+
+  componentWillReceiveProps(nextProps){
+        if (nextProps.isLoggedIn) {
+            this.props.navigation.navigate('Home')
+        }
+  }
   render() {
   	return (
     <View style= {{ margin: 0 ,height:'100%'  }} >
-	   	<LoginForm onSubmit = {(values)=> { console.log(values);}}/>
+	   	<LoginForm onSubmit = {(values)=> { this.props.login(values)}}/>
     </View>); 
   }
 }
