@@ -11,7 +11,7 @@ export default class Page extends React.Component {
                 }
              
 			    async checkUser() {
-			    			var loggedIn = true ;
+			    			var loggedIn = false ;
 
 			                        if (loggedIn) {
 			                            this.props.navigation.replace("Home")
