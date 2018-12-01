@@ -17,8 +17,9 @@ const mapStateToProps = ({ loginModal }) => {
 };
 class Page extends React.Component {
   render() {
-  	return (<View style= {{ margin: 0 ,height:'100%'  }} >
-	   	<LoginForm/>
+  	return (
+    <View style= {{ margin: 0 ,height:'100%'  }} >
+	   	<LoginForm onSubmit = {(values)=> { console.log(values);}}/>
     </View>); 
   }
 }
