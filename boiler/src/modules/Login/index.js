@@ -31,7 +31,7 @@ class Page extends React.Component {
       </View>);
     }
   	return (
-    <View style={[styles.container, styles.horizontal]} >
+    <View style={[ styles.horizontal]} >
 	   	<LoginForm onSubmit = {(values)=> { this.props.login(values)}}/>
     </View>); 
   }
