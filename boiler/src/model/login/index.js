@@ -3,7 +3,7 @@ import * as service from "../../service/login";
 export default {
   state: {
     loading: false,
-    loginStatus:null,
+    loginStatus:false,
   },
   reducers: {
     onRequest(state) {
@@ -25,10 +25,11 @@ export default {
       };
     },
     onLogin(state, data) {
+      
       return {
         ...state,
         loading: false,
-        loginStatus: data
+        loginStatus: data.id ? true :false
       };
     },
   },

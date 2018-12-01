@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { View } from 'react-native'
+import { View ,ActivityIndicator} from 'react-native'
 import LoginForm from "./../../Components/login/loginform"
+import {styles} from "./../../style"
 import { connect } from "react-redux";
 import { compose } from "recompose";
 
@@ -19,13 +20,18 @@ const mapStateToProps = ({ loginModal }) => {
 class Page extends React.Component {
 
   componentWillReceiveProps(nextProps){
-        if (nextProps.isLoggedIn) {
-            this.props.navigation.navigate('Home')
+        if (nextProps.loginStatus) {
+            this.props.navigation.replace('Home')
         }
   }
   render() {
+    if(this.props.loading){
+      return (<View style={[styles.container, styles.horizontal]}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>);
+    }
   	return (
-    <View style= {{ margin: 0 ,height:'100%'  }} >
+    <View style={[styles.container, styles.horizontal]} >
 	   	<LoginForm onSubmit = {(values)=> { this.props.login(values)}}/>
     </View>); 
   }
