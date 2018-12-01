@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { View ,ActivityIndicator,Text,Image} from 'react-native'
+import { Container, Item, Content, Button  } from 'native-base';
 import {styles} from "./../../style"
 import { connect } from "react-redux";
 import { compose } from "recompose";
@@ -21,6 +22,13 @@ class Page extends React.Component {
 	async componentDidMount() {
         this.props.fetchUser();
     }
+   
+    componentWillReceiveProps(nextProps){
+              if (nextProps.loginStatus == false) {
+                  this.props.navigation.replace('Login')
+              }
+          }
+
    render() {
   //console.log(this.props);
     
@@ -37,6 +45,11 @@ class Page extends React.Component {
           />
               <Text style={[styles.headline]}>WELCOME</Text>
        <Text style={[styles.title]} >{ (this.props.userData.results[0].name.first + " " + this.props.userData.results[0].name.last).toUpperCase()}</Text>
+      <Button style= {{ margin: 10 }} block primary onPress= { ()=> { this.props.logout() } }>
+            <Text>Logout</Text>
+      </Button>
+          
+
       </View>);
     }
     

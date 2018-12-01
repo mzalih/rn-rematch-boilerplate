@@ -2,9 +2,8 @@ import * as service from "../../service/auth";
 
 export default {
   state: {
-    loginStatus:true,
-    loading: false,
-    userData:null,
+    loading: true,
+    loginStatus: false,
   },
   reducers: {
     onRequest(state) {
@@ -20,49 +19,26 @@ export default {
       };
     },
     onError(state,err) {
-      console.log("ERRR",err);
       return {
         ...state,
-        loading: false
-      };
-    },
-    onLogout(state, data) {
-      return {
-        ...state,
-        loginStatus:false,
         loading: false,
-        userData: data
+        error:err
       };
     },
     onData(state, data) {
-      console.log(data);
       return {
         ...state,
-        loginStatus:true,
         loading: false,
+        loginStatus: data,
         userData: data
       };
     },
   },
   effects: {
-
-    async logout(rootState){
-
-       try {
-        this.onRequest();
-        let res = await service.logout();
-        this.onLogout(res);
-        return res;
-      } catch (e) {
-        this.onError(e);
-        throw e;
-      }
-
-    },
-    async fetchUser(rootState) {
+    async checkLogedIn(rootState) {
       try {
         this.onRequest();
-        let res = await service.getUser();
+        let res = await service.loggedIn();
         this.onData(res);
         return res;
       } catch (e) {

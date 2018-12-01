@@ -19,6 +19,13 @@ const mapStateToProps = ({ loginModal }) => {
 
 class Page extends React.Component {
 
+  static navigationOptions = {
+        title: "PAGE NAME",
+        headerStyle: styles.headerStyle,
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold', },
+    }
+
   componentWillReceiveProps(nextProps){
         if (nextProps.loginStatus) {
             this.props.navigation.replace('Home')
