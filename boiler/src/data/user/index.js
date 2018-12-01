@@ -1,18 +1,18 @@
-import  data  from "./../data"
+import  data  from "../"
 
 export default class User {
 
-	static async isLoged(){
+	static async isLogedIn(){
 			try{
-				let response = await data.get("logged_in");
+				let response = await data.get("loged_in");
 		    	return response == "true" ? true : false ;
 		    }catch(err){
 		    	return false;
 		    }
 	}
 
-	static async loged(value){
-		 await data.set("logged_in", value ? "true":"false");
+	static async setLogin(value){
+		 await data.set("loged_in", value ? "true":"false");
 	}
 
 }

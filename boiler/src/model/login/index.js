@@ -43,7 +43,7 @@ export default {
         this.onLogin(res);
       
         // save required data
-        await user.logged(true);
+        await user.setLogin(true);
 
         return res;
       } catch (e) {

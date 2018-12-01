@@ -11,12 +11,12 @@ export async function getUser() {
 }
 
 export async function loggedIn() {
-	return  await user.isLogged();
+	return  await user.isLogedIn();
 }
 
 export async function logout() {
 	//Invoke API Call here to remove token from server etc ..
-	await user.logged(false);;
+	await user.setLogin(false);;
     return false;
 }
 export async function login(payload) {
