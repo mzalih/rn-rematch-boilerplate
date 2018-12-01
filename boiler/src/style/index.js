@@ -34,4 +34,8 @@ export const styles = StyleSheet.create({
   headerStyle: {
       backgroundColor: '#7798B5',
     },
+    errorText:{
+      fontSize: 12,
+      color:"#FF4444"
+    },
 })

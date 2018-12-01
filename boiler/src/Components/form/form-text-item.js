@@ -3,6 +3,8 @@ import { View } from 'react-native'
 import { Field } from 'redux-form'
 import { Text, Item, Input, Label } from 'native-base';
 import { required } from './form-validate'
+import {styles} from "./../../style"
+
 class FormTextItem extends Component {
     static navigationOptions = {
         header: null
@@ -17,12 +19,12 @@ class FormTextItem extends Component {
             hasError = true;
         }
         return (
-            <View>
+            <View style = {{ marginBottom: 10 }}>
                 <Item floatingLabel={init?false:true} error={hasError}>
                    {init?<Text/>: <Label>{label}</Label>}
                     <Input secureTextEntry={type == 'password' ? true : false} keyboardType={type == 'password' ? "default" : type} placeholder={init} {...input} />
                 </Item>
-                {(hasError && touched) ? <Text>{error}</Text> : <Text />}
+                {(hasError && touched) ? <Text style = {[styles.errorText]}>{error}</Text> : <Text />}
             </View>
         )
     }
