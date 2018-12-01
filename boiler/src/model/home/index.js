@@ -31,7 +31,7 @@ export default {
         ...state,
         loginStatus:false,
         loading: false,
-        userData: data
+        userData: null
       };
     },
     onData(state, data) {

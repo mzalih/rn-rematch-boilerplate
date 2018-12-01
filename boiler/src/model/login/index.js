@@ -1,4 +1,6 @@
-import * as service from "../../service/login";
+import * as service from "../../service/auth";
+import user from "./../../data/user"
+
 
 export default {
   state: {
@@ -36,11 +38,13 @@ export default {
   effects: {
     async login(payload, rootState) {
       try {
-        console.log("ON MODAL",payload);
         this.onRequest();
-        console.log(this);
         let res = await service.login(payload);
         this.onLogin(res);
+      
+        // save required data
+        await user.logged(true);
+
         return res;
       } catch (e) {
         this.onError(e);

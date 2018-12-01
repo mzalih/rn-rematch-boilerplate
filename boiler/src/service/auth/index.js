@@ -1,4 +1,5 @@
 import * as api from "../api";
+import user from "./../../data/user"
 
 export async function token() {
     return "@TODO ADD TOKEN ";
@@ -10,10 +11,16 @@ export async function getUser() {
 }
 
 export async function loggedIn() {
-    return false;
+	return  await user.isLogged();
 }
 
 export async function logout() {
+	//Invoke API Call here to remove token from server etc ..
+	await user.logged(false);;
     return false;
+}
+export async function login(payload) {
+  var url = "https://reqres.in/api/users";
+  return  await api.post(url,payload);
 }
 
