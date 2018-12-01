@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import { View } from 'react-native';
 import { Validate,TextField } from "../form"
-import { Container, Item, Content, Button, Text } from 'native-base';
+import { Container, Item, Content, Button, Text  } from 'native-base';
 import { Field,reduxForm } from 'redux-form';
 
 class LoginForm extends Component {
@@ -21,7 +21,7 @@ class LoginForm extends Component {
        <Content padder>
           <TextField name='email' label='Enter Username' type="default" />
           <TextField name='password' label='Enter PassWord' type="password" />
-        <Button style= {{ margin: 10 }} block primary onPress= { this.props.handleSubmit }>
+          <Button style= {{ margin: 10 }} block primary onPress= { this.props.handleSubmit }>
           <Text>Login</Text>
         </Button>
       </Content>
