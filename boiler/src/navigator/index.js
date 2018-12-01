@@ -9,7 +9,7 @@ import {
 
 import SplashScreen from "../modules/SplashScreen";
 import Login from "../modules/Login";
-import Home from "../modules/Home";
+import Home from "./tab"
 
 
 const AppNavigator = createStackNavigator(

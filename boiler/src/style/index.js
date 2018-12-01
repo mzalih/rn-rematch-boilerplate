@@ -31,6 +31,11 @@ export const styles = StyleSheet.create({
     height:100,
     width: 100,
   },
+   circle25: {
+    borderRadius:12.5,
+    height:25,
+    width: 25,
+  },
   headerStyle: {
       backgroundColor: '#7798B5',
     },

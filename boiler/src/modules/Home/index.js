@@ -20,7 +20,7 @@ const mapStateToProps = ({ homeModal }) => {
 class Page extends React.Component {
 
   static navigationOptions = {
-        title: "PAGE NAME",
+        title: "FEED",
         headerStyle: styles.headerStyle,
         headerTintColor: '#fff',
         headerTitleStyle: { fontWeight: 'bold', },
@@ -48,7 +48,7 @@ class Page extends React.Component {
      if(data){
       return (<View style={[styles.container]}>
         <Image
-            style={[styles.circle100]}
+            style={[styles.circle100 ]} 
             source={{uri: data.picture.medium}}
           />
               <Text style={[styles.headline]}>WELCOME</Text>
