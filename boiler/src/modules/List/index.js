@@ -35,7 +35,8 @@ class Page extends React.Component {
 					   if(this.props.userData.results){
 					   	return (
 						    <View style={[styles.container, styles.horizontal]} >
-						    	<UserList data  ={  this.props.userData.results} />
+						    	<UserList data  ={  this.props.userData.results }
+						    	 onEnd = {()=>{alert("fetch more now")}}/>
 						    </View>); 
 					   } 
 					  	return (

@@ -33,6 +33,8 @@ class UserList extends Component {
                   {title: 'FRIENDS', data: this.props.data},
                 ]}
                 keyExtractor={(item, index) => item + index}
+                onEndReached={() => { this.props.onEnd() }}
+         
               />
       
     </View> )
