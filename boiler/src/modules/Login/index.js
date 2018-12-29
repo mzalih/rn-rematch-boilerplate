@@ -4,6 +4,8 @@ import LoginForm from "./../../components/login/loginform"
 import {styles} from "./../../style"
 import { connect } from "react-redux";
 import { compose } from "recompose";
+import Loading from "./../../effects/loading"
+
 
 const mapDispatchToProps = ({ loginModal }) => {
   return {
@@ -32,15 +34,12 @@ class Page extends React.Component {
         }
   }
   render() {
-    if(this.props.loading){
-      return (<View style={[styles.container, styles.horizontal]}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>);
-    }
   	return (
-    <View style={[ styles.horizontal]} >
-	   	<LoginForm onSubmit = {(values)=> { this.props.login(values)}}/>
-    </View>); 
+    <Loading loading = {this.props.loading}>
+      <View style={[ styles.horizontal]} >
+        <LoginForm onSubmit = {(values)=> { this.props.login(values)}}/>
+      </View>
+    </Loading>); 
   }
 }
 export default compose(
