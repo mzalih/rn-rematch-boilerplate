@@ -1,11 +1,9 @@
 import React from "react";
 import { Platform, StatusBar, View, Image } from "react-native";
-import {
-  createAppContainer,
-  createStackNavigator,
-  createBottomTabNavigator,
-  BottomTabBar
-} from "react-navigation";
+import{
+  createBottomTabNavigator
+} from "react-navigation-tabs"
+
 
 import Home from "../modules/Home";
 import List from "../modules/List";

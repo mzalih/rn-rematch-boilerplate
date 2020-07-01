@@ -2,10 +2,11 @@ import React from "react";
 import { Platform, StatusBar, View, Image } from "react-native";
 import {
   createAppContainer,
-  createStackNavigator,
-  createBottomTabNavigator,
-  BottomTabBar
 } from "react-navigation";
+import{
+  createStackNavigator
+} from "react-navigation-stack"
+
 
 import SplashScreen from "../modules/SplashScreen";
 import Login from "../modules/Login";

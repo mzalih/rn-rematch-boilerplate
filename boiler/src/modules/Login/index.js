@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import { View ,ActivityIndicator} from 'react-native'
-import LoginForm from "./../../components/login/loginform"
+import React from 'react';
+import { View } from 'react-native'
+import LoginForm from "./../../Components/login/loginform"
 import {styles} from "./../../style"
 import { connect } from "react-redux";
 import { compose } from "recompose";

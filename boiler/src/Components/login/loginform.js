@@ -1,8 +1,7 @@
 import React , { Component } from 'react';
-import { View } from 'react-native';
 import { validate ,TextField } from "../form"
-import { Container, Item, Content, Button, Text,Form  } from 'native-base';
-import { Field,reduxForm } from 'redux-form';
+import { Container, Content, Button, Text  } from 'native-base';
+import { reduxForm } from 'redux-form';
 import {styles} from "./../../style"
 
 

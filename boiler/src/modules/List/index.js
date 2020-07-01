@@ -3,7 +3,7 @@ import { View,ActivityIndicator,Text } from 'react-native'
 import {styles} from "./../../style"
 import { connect } from "react-redux";
 import { compose } from "recompose";
-import UserList from "./../../components/userslist"
+import UserList from "./../../Components/userslist"
 
 const mapDispatchToProps = ({ listModal }) => {
   return {

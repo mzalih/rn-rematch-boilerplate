@@ -33,7 +33,7 @@ class Page extends React.Component {
 					    }
 					  	return (
 					    <View style={[styles.container, styles.horizontal]} >
-					    	<Text>LOADING ERROR</Text>
+					    	<Text>LOADING ..</Text>
 					    </View>); 
 				}
                 componentDidMount() {
